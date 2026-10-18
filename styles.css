@@ -191,8 +191,6 @@ html[lang="kn"] .work-art svg text { font-family: "Noto Sans Kannada", "Nirmala 
   .hero-actions { gap: 18px; }
   .section-heading, .process-heading { gap: 30px; }
   .work-grid { gap: 16px; }
-  .store-grid { gap: 16px; }
-  .product-buy { align-items: flex-start; flex-direction: column; }
   .work-card h3 { font-size: 21px; }
   .work-card-detail { margin-left: 0; }
   .approach-copy { padding: 70px 7vw; }
@@ -233,12 +231,6 @@ html[lang="kn"] .work-art svg text { font-family: "Noto Sans Kannada", "Nirmala 
   h2 { font-size: clamp(51px, 13vw, 70px); }
   .section-intro { margin: 23px 0 0; font-size: 12px; }
   .work-grid { grid-template-columns: 1fr; gap: 35px; }
-  .store-grid { grid-template-columns: 1fr; gap: 20px; }
-  .store-product { padding: 10px 10px 18px; }
-  .product-art { aspect-ratio: 1.2 / .8; }
-  .product-buy { align-items: center; flex-direction: row; }
-  .store-product > p { min-height: 0; }
-  .store-footnote { margin-top: 30px; }
   .work-card-large .work-art, .work-art { aspect-ratio: 1.2 / .86; }
   .work-card-info { padding-top: 16px; }
   .work-card h3 { font-size: 23px; }

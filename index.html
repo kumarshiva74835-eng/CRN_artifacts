@@ -15,8 +15,8 @@
     <a class="skip-link" href="#main" data-i18n="skipContent">Skip to content</a>
 
     <header class="site-header" id="top">
-      <a class="brand" href="#top" aria-label="CRN Artifacts home" data-i18n-aria-label="brandHome">
-        <img class="brand-logo" src="assets/crn-artifacts-logo.png" alt="" />
+      <a class="brand brand-header" href="#top" aria-label="CRN Artifacts home" data-i18n-aria-label="brandHome">
+        <span class="brand-name">CRN <span>ARTIFACTS</span></span>
       </a>
 
       <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
@@ -24,10 +24,10 @@
       </button>
 
       <nav class="site-nav" id="site-nav" aria-label="Main navigation" data-i18n-aria-label="mainNavigation">
-        <a href="#work" data-i18n="navWork">What we make</a>
-        <a href="#about" data-i18n="navAbout">About us</a>
-        <a href="#approach" data-i18n="navApproach">Our approach</a>
-        <a href="#process" data-i18n="navProcess">Process</a>
+        <a href="#work" data-i18n="navWork">Work</a>
+        <a href="#what-we-make" data-i18n="navWhatWeMake">What We Make</a>
+        <a href="#process" data-i18n="navProcess">Our Process</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
         <button class="language-toggle" id="language-toggle" type="button" aria-label="Switch language to Kannada">ಕನ್ನಡ</button>
       </nav>
     </header>
@@ -35,34 +35,26 @@
     <main id="main">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow"><span class="eyebrow-line"></span> <span data-i18n="heroEyebrow">CUSTOM CNC WOODWORK</span></p>
-          <h1 id="hero-title" data-i18n-html="heroTitle">Wood, shaped<br /><em>with intention.</em></h1>
-          <p class="hero-intro" data-i18n="heroIntro">A good idea deserves a material with character. We shape wood into thoughtful details, made to fit your space and your story.</p>
+          <p class="eyebrow"><span class="eyebrow-line"></span> <span data-i18n="heroEyebrow">CUSTOM CNC WOODCRAFT</span></p>
+          <h1 id="hero-title" data-i18n-html="heroTitle">Wood, shaped with<br /><em>intention.</em></h1>
+          <p class="hero-intro" data-i18n="heroIntro">Precise CNC carving brings your personal ideas into wood, with attention to form and detail.</p>
           <div class="hero-actions">
-            <a class="text-link" href="#work"><span data-i18n="exploreWork">Explore what we make</span> <span aria-hidden="true">↓</span></a>
+            <a class="button button-gold" href="#contact"><span data-i18n="startProject">Start a project</span><span aria-hidden="true">↗</span></a>
           </div>
-          <div class="hero-note"><span class="note-dot"></span> <span data-i18n="heroNote">Designed around your idea. Cut with precision.</span></div>
         </div>
-        <div class="hero-visual" role="img" aria-label="CNC router carving a detailed pattern into warm walnut wood" data-i18n-aria-label="heroImageAlt">
+        <div class="hero-visual" role="img" aria-label="Abstract concentric wood grain study in warm walnut tones" data-i18n-aria-label="heroImageAlt">
           <div class="hero-image"></div>
           <div class="hero-image-shade"></div>
         </div>
       </section>
 
-      <div class="ticker" aria-label="Crafted with care, made to be yours" data-i18n-aria-label="tickerLabel">
-        <div class="ticker-track">
-          <span data-i18n="tickerOne">GOOD IDEAS, MADE IN WOOD</span><i>✳</i><span data-i18n="tickerTwo">PRECISION IN EVERY DETAIL</span><i>✳</i><span data-i18n="tickerThree">MADE TO BE YOURS</span><i>✳</i>
-          <span aria-hidden="true" data-i18n="tickerOne">GOOD IDEAS, MADE IN WOOD</span><i aria-hidden="true">✳</i><span aria-hidden="true" data-i18n="tickerTwo">PRECISION IN EVERY DETAIL</span><i aria-hidden="true">✳</i><span aria-hidden="true" data-i18n="tickerThree">MADE TO BE YOURS</span><i aria-hidden="true">✳</i>
-        </div>
-      </div>
-
       <section class="section work-section" id="work" aria-labelledby="work-title">
         <div class="section-heading">
           <div>
-            <p class="eyebrow"><span class="eyebrow-line"></span> <span data-i18n="workEyebrow">MADE FOR YOUR SPACE</span></p>
-            <h2 id="work-title" data-i18n-html="workTitle">Your idea.<br /><em>In its element.</em></h2>
+            <p class="eyebrow"><span class="eyebrow-line"></span> <span data-i18n="workEyebrow">A STUDY IN WOOD</span></p>
+            <h2 id="work-title" data-i18n-html="workTitle">Made to feel personal.</h2>
           </div>
-          <p class="section-intro" data-i18n="workIntro">From a small personal detail to a statement piece, CNC carving brings clarity and character to a wide range of woodwork.</p>
+          <p class="section-intro" data-i18n="workIntro">A few directions your idea might take. The abstract studies below illustrate forms, not finished projects.</p>
         </div>
 
         <div class="work-grid">
@@ -113,7 +105,7 @@
                 </g>
               </svg>
             </div>
-            <div class="work-card-info"><div><span class="card-number">02</span><h3 data-i18n="cardPanels">Decorative panels</h3></div><span class="card-arrow" aria-hidden="true">↗</span></div>
+            <div class="work-card-info"><div><span class="card-number">02</span><h3 data-i18n="cardPanels">Wall panels</h3></div><span class="card-arrow" aria-hidden="true">↗</span></div>
             <p class="work-card-detail" data-i18n="cardPanelsText">Layer, texture and pattern for walls and interiors.</p>
           </article>
 
@@ -138,52 +130,53 @@
                 </g>
               </svg>
             </div>
-            <div class="work-card-info"><div><span class="card-number">03</span><h3 data-i18n="cardPersonal">Personal details</h3></div><span class="card-arrow" aria-hidden="true">↗</span></div>
+            <div class="work-card-info"><div><span class="card-number">03</span><h3 data-i18n="cardPersonal">Custom details</h3></div><span class="card-arrow" aria-hidden="true">↗</span></div>
             <p class="work-card-detail" data-i18n="cardPersonalText">Monograms, keepsakes and one-of-a-kind accents.</p>
           </article>
         </div>
-        <p class="work-footnote" data-i18n="workFootnote">These are starting points. Each piece can be shaped around your own design and dimensions.</p>
       </section>
 
-      <section class="maker-section" id="about" aria-labelledby="about-title">
-        <div class="maker-image" role="img" aria-label="CNC router carving a wood panel at the CRN Artifacts workshop" data-i18n-aria-label="aboutImageAlt">
-          <div class="maker-image-shade"></div>
-          <div class="maker-image-caption"><span data-i18n="makerImageLabel">THE MAKER BEHIND THE WORK</span><strong>CRN <i>ARTIFACTS</i></strong></div>
-        </div>
-        <div class="maker-copy">
-          <p class="eyebrow"><span class="eyebrow-line"></span> <span data-i18n="aboutEyebrow">MEET THE MAKER</span></p>
-          <h2 id="about-title" data-i18n-html="aboutTitle">Meet Charan.<br /><em>Woodwork with meaning.</em></h2>
-          <p class="maker-role" data-i18n="aboutRole">Maker at CRN Artifacts · KR Nagar, Mysore district</p>
-          <p class="maker-bio" data-i18n="aboutBio">Charan creates custom CNC-crafted woodwork at CRN Artifacts. He works with you to turn names, patterns and personal ideas into carved signs, decorative panels and keepsakes.</p>
-          <p class="maker-bio" data-i18n="aboutApproach">Each piece is planned around its size, design and finish. CNC routing gives the details clean definition, while the natural grain makes every piece distinct.</p>
-          <div class="maker-focus"><span data-i18n="aboutWorkLabel">HIS WORK</span><p data-i18n="aboutWork">Carved signs · Decorative wall panels · Personalized keepsakes</p></div>
-          <a class="button button-dark maker-cta" href="#work"><span data-i18n="aboutCta">Explore what we make</span><span aria-hidden="true">↗</span></a>
-        </div>
-      </section>
-
-      <section class="approach-section" id="approach" aria-labelledby="approach-title">
-        <div class="approach-image" role="img" aria-label="Close view of a routed pattern and natural wood grain" data-i18n-aria-label="approachImageAlt"></div>
-        <div class="approach-copy">
-          <p class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> <span data-i18n="approachEyebrow">THE CRN APPROACH</span></p>
-          <h2 id="approach-title" data-i18n-html="approachTitle">Digital precision.<br /><em>Natural character.</em></h2>
-          <p data-i18n="approachText">Good woodwork brings together careful planning and the small details that make a piece feel personal. CNC routing lets us create clean lines, repeatable patterns and considered shapes, while the grain keeps every piece its own.</p>
-          <a class="button button-outline" href="#work"><span data-i18n="approachCta">Explore what we make</span> <span aria-hidden="true">↗</span></a>
-          <div class="approach-note"><span class="approach-rule"></span><span data-i18n="approachNote">Thoughtful design, shaped one piece at a time.</span></div>
+      <section class="what-section" id="what-we-make" aria-labelledby="make-title">
+        <p class="eyebrow"><span class="eyebrow-line"></span> <span data-i18n="makeEyebrow">WHAT WE MAKE</span></p>
+        <div class="what-copy">
+          <h2 id="make-title" data-i18n-html="makeTitle">Your idea,<br /><em>given shape.</em></h2>
+          <p data-i18n="makeText">From lettering to dimensional patterns and small considered details, each piece begins with an idea that matters to you.</p>
         </div>
       </section>
 
       <section class="section process-section" id="process" aria-labelledby="process-title">
         <div class="process-heading">
           <div>
-            <p class="eyebrow"><span class="eyebrow-line"></span> <span data-i18n="processEyebrow">FROM IDEA TO ARTIFACT</span></p>
-            <h2 id="process-title" data-i18n-html="processTitle">A simple way<br /><em>to get started.</em></h2>
+            <p class="eyebrow"><span class="eyebrow-line"></span> <span data-i18n="processEyebrow">OUR PROCESS</span></p>
+            <h2 id="process-title" data-i18n-html="processTitle">From thought<br /><em>to form.</em></h2>
           </div>
-          <p class="section-intro" data-i18n="processIntro">A little conversation turns a rough thought into a clear direction. Here’s how a custom piece takes shape.</p>
         </div>
         <div class="steps">
-          <article class="step"><span class="step-index">01</span><div class="step-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 11h32v23H21l-8 7v-7H8z"/><path d="M15 19h18M15 26h12"/></svg></div><h3 data-i18n="stepOneTitle">Share the idea</h3><p data-i18n="stepOneText">Tell us what you are imagining, where it will go and any details that matter.</p></article>
-          <article class="step"><span class="step-index">02</span><div class="step-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="m10 34 4-11L31 6l11 11-17 17-11 4z"/><path d="m27 10 11 11M14 23l11 11M8 41h32"/></svg></div><h3 data-i18n="stepTwoTitle">Shape the design</h3><p data-i18n="stepTwoText">We work through size, layout and finish so the piece feels right for its purpose.</p></article>
-          <article class="step"><span class="step-index">03</span><div class="step-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M11 11h26v26H11z"/><path d="M16 17c5-4 11 4 16 0M16 24c5-4 11 4 16 0M16 31c5-4 11 4 16 0"/><path d="M7 7h34v34H7z"/></svg></div><h3 data-i18n="stepThreeTitle">Make it in wood</h3><p data-i18n="stepThreeText">The approved design is cut with care and prepared as a finished custom piece.</p></article>
+          <article class="step"><span class="step-index">01 /</span><h3 data-i18n="stepOneTitle">Share your idea</h3><p data-i18n="stepOneText">Tell us what you have in mind and what makes it yours.</p></article>
+          <article class="step"><span class="step-index">02 /</span><h3 data-i18n="stepTwoTitle">Shape the design</h3><p data-i18n="stepTwoText">Consider the lines, proportions, and details of the piece.</p></article>
+          <article class="step"><span class="step-index">03 /</span><h3 data-i18n="stepThreeTitle">Crafted in wood</h3><p data-i18n="stepThreeText">The design takes physical form through precise CNC carving.</p></article>
+        </div>
+      </section>
+
+      <section class="about-section" id="about" aria-labelledby="about-title">
+        <p class="eyebrow"><span class="eyebrow-line"></span> <span data-i18n="aboutEyebrow">ABOUT THE STUDIO</span></p>
+        <div class="about-copy">
+          <h2 id="about-title" data-i18n-html="aboutTitle">Considered by<br /><em>nature.</em></h2>
+          <p data-i18n="aboutBio">CRN Artifacts is a custom CNC woodcraft studio focused on turning personal ideas into considered wood pieces. We’re drawn to the meeting point of precise carving and expressive form.</p>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="contact-copy">
+          <p class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> <span data-i18n="contactEyebrow">CONTACT</span></p>
+          <h2 id="contact-title" data-i18n-html="contactTitle">Let’s start with<br /><em>an idea.</em></h2>
+          <p data-i18n="contactText">Have a piece in mind? We’d welcome a conversation about what you’re imagining.</p>
+        </div>
+        <div class="contact-details">
+          <p data-i18n="contactPrompt">A good place to begin is with the shape, words, or details you’d like to explore.</p>
+          <a class="contact-phone" href="tel:+918073777020" aria-label="Call CRN Artifacts at 8073777020" data-i18n-aria-label="footerPhoneLabel">8073777020 <span aria-hidden="true">↗</span></a>
+          <a class="contact-location" href="https://www.google.com/maps/search/?api=1&amp;query=KR%20Nagar%2C%20Mysore%20district%20571602" target="_blank" rel="noopener noreferrer" aria-label="Open the CRN Artifacts location in maps" data-i18n-aria-label="footerLocationLabel" data-i18n="footerLocation">KR Nagar, Mysore district · 571602</a>
+          <button class="contact-whatsapp" data-social-link="whatsapp" type="button" aria-label="Chat with CRN Artifacts on WhatsApp" data-i18n-aria-label="whatsappLabel">WhatsApp <span aria-hidden="true">↗</span></button>
         </div>
       </section>
 
@@ -191,26 +184,10 @@
 
     <footer class="site-footer">
       <a class="brand brand-footer" href="#top" aria-label="CRN Artifacts, back to top" data-i18n-aria-label="brandBackTop">
-        <span class="brand-mark" aria-hidden="true">CRN</span>
         <span class="brand-name">CRN <span>ARTIFACTS</span></span>
       </a>
-      <p data-i18n-html="footerTagline">Made with intention.<br /><span>Rooted in wood.</span></p>
-      <div class="footer-contact" role="group" aria-label="Contact" data-i18n-aria-label="footerContactTitle">
-        <p class="footer-contact-title" data-i18n="footerContactTitle">CONTACT</p>
-        <p class="footer-contact-owner">Charan</p>
-        <a href="tel:+918073777020" aria-label="Call CRN Artifacts at 8073777020" data-i18n-aria-label="footerPhoneLabel">8073777020</a>
-        <a href="https://www.google.com/maps/search/?api=1&amp;query=KR%20Nagar%2C%20Mysore%20district%20571602" target="_blank" rel="noopener noreferrer" aria-label="Open the CRN Artifacts location in maps" data-i18n-aria-label="footerLocationLabel" data-i18n="footerLocation">KR Nagar, Mysore district · 571602</a>
-      </div>
-      <div class="footer-socials" aria-label="Social links" data-i18n-aria-label="socialLinksLabel">
-        <button class="social-link" data-social-link="whatsapp" type="button" aria-label="Chat with CRN Artifacts on WhatsApp" data-i18n-aria-label="whatsappLabel" disabled title="Add the WhatsApp number in script.js">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 11.8a8.2 8.2 0 0 1-12.1 7.1L3 20l1.2-4.9A8.2 8.2 0 1 1 20.2 11.8Z"/><path d="M8.2 7.6c-.3.2-.7.8-.7 1.6 0 1.1.8 2.4 2 3.6 1.2 1.2 2.6 2 3.7 2 .8 0 1.3-.4 1.5-.8l.4-.9-2-1-.7.8c-.2.2-.4.2-.7.1-.6-.3-1.3-.8-1.8-1.4-.5-.5-1-1.2-1.2-1.8-.1-.2 0-.5.2-.6l.7-.6-1-2-.9.4Z"/></svg>
-        </button>
-        <button class="social-link" data-social-link="instagram" type="button" aria-label="View CRN Artifacts on Instagram" data-i18n-aria-label="instagramLabel" disabled title="Add the Instagram handle in script.js">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.7" cy="6.7" r=".8" fill="currentColor" stroke="none"/></svg>
-        </button>
-      </div>
-      <a class="back-top" href="#top"><span data-i18n="backToTop">Back to top</span> <span aria-hidden="true">↑</span></a>
       <small>© <span id="year"></span> CRN Artifacts</small>
+      <a class="back-top" href="#top"><span data-i18n="backToTop">Back to top</span> <span aria-hidden="true">↑</span></a>
     </footer>
   </body>
 </html>

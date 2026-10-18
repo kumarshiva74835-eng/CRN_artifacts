@@ -1,7 +1,6 @@
 const menuToggle = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector(".site-nav");
 const languageToggle = document.querySelector("#language-toggle");
-const socialLinks = document.querySelectorAll("[data-social-link]");
 const workCards = document.querySelectorAll(".work-card");
 
 if (workCards.length) {
@@ -22,10 +21,6 @@ if (workCards.length) {
     workCards.forEach((card) => workRevealObserver.observe(card));
   }
 }
-// Add the business WhatsApp number in international format and Instagram handle here.
-const WHATSAPP_NUMBER = "918073777020"; // India country code + the provided number.
-const INSTAGRAM_HANDLE = ""; // Example: crn_artifacts (without @)
-
 const translations = {
   en: {
     pageTitle: "CRN Artifacts — Wood, shaped with intention",
@@ -36,19 +31,9 @@ const translations = {
     mainNavigation: "Main navigation",
     navWork: "Work",
     navWhatWeMake: "What We Make",
-    navContact: "Contact",
     navAbout: "About us",
     navApproach: "Our approach",
     navProcess: "Our Process",
-    socialLinksLabel: "Social links",
-    whatsappLabel: "Chat with CRN Artifacts on WhatsApp",
-    instagramLabel: "View CRN Artifacts on Instagram",
-    whatsappUnavailable: "Add the WhatsApp number in script.js to enable this link.",
-    instagramUnavailable: "Add the Instagram handle in script.js to enable this link.",
-    footerContactTitle: "CONTACT",
-    footerPhoneLabel: "Call CRN Artifacts at 8073777020",
-    footerLocationLabel: "Open the CRN Artifacts location in maps",
-    footerLocation: "KR Nagar, Mysore district · 571602",
     heroEyebrow: "CUSTOM CNC WOODCRAFT",
     heroTitle: "Wood, shaped with<br /><em>intention.</em>",
     heroIntro: "Precise CNC carving brings your personal ideas into wood, with attention to form and detail.",
@@ -98,11 +83,6 @@ const translations = {
     stepTwoText: "Consider the lines, proportions, and details of the piece.",
     stepThreeTitle: "Crafted in wood",
     stepThreeText: "The design takes physical form through precise CNC carving.",
-    contactEyebrow: "CONTACT",
-    contactTitle: "Let’s start with<br /><em>an idea.</em>",
-    contactText: "Have a piece in mind? We’d welcome a conversation about what you’re imagining.",
-    contactPrompt: "A good place to begin is with the shape, words, or details you’d like to explore.",
-    startProject: "Start a project",
     footerTagline: "Made with intention.<br /><span>Rooted in wood.</span>",
     backToTop: "Back to top"
   },
@@ -115,19 +95,9 @@ const translations = {
     mainNavigation: "ಮುಖ್ಯ ಮೆನು",
     navWork: "ಕೆಲಸ",
     navWhatWeMake: "ನಾವು ರೂಪಿಸುವುದು",
-    navContact: "ಸಂಪರ್ಕ",
     navAbout: "ನಮ್ಮ ಬಗ್ಗೆ",
     navApproach: "ನಮ್ಮ ವಿಧಾನ",
     navProcess: "ನಮ್ಮ ಪ್ರಕ್ರಿಯೆ",
-    socialLinksLabel: "ಸಾಮಾಜಿಕ ಜಾಲತಾಣಗಳು",
-    whatsappLabel: "WhatsApp‌ನಲ್ಲಿ CRN Artifacts ಜೊತೆ ಮಾತನಾಡಿ",
-    instagramLabel: "Instagram‌ನಲ್ಲಿ CRN Artifacts ನೋಡಿ",
-    whatsappUnavailable: "ಈ ಲಿಂಕ್ ಸಕ್ರಿಯಗೊಳಿಸಲು script.js‌ನಲ್ಲಿ WhatsApp ಸಂಖ್ಯೆಯನ್ನು ಸೇರಿಸಿ.",
-    instagramUnavailable: "ಈ ಲಿಂಕ್ ಸಕ್ರಿಯಗೊಳಿಸಲು script.js‌ನಲ್ಲಿ Instagram ಹೆಸರನ್ನು ಸೇರಿಸಿ.",
-    footerContactTitle: "ಸಂಪರ್ಕ",
-    footerPhoneLabel: "CRN Artifacts‌ಗೆ 8073777020 ಸಂಖ್ಯೆಗೆ ಕರೆ ಮಾಡಿ",
-    footerLocationLabel: "CRN Artifacts ಸ್ಥಳವನ್ನು ನಕ್ಷೆಯಲ್ಲಿ ತೆರೆಯಿರಿ",
-    footerLocation: "ಕೆ.ಆರ್. ನಗರ, ಮೈಸೂರು ಜಿಲ್ಲೆ · 571602",
     heroEyebrow: "ಕಸ್ಟಮ್ CNC ಮರಕೆತ್ತನೆ",
     heroTitle: "ಮರಕ್ಕೆ ರೂಪ,<br /><em>ಉದ್ದೇಶಪೂರ್ಣ ಸ್ಪರ್ಶ.</em>",
     heroIntro: "ನಿಖರವಾದ CNC ಕೆತ್ತನೆಯಿಂದ ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ಕಲ್ಪನೆಗಳಿಗೆ ಮರದಲ್ಲಿ ರೂಪ ನೀಡುತ್ತೇವೆ; ಆಕಾರ ಮತ್ತು ವಿವರಗಳಿಗೆ ವಿಶೇಷ ಗಮನ ಕೊಡುತ್ತೇವೆ.",
@@ -177,11 +147,6 @@ const translations = {
     stepTwoText: "ವಿನ್ಯಾಸದ ರೇಖೆಗಳು, ಅನುಪಾತಗಳು ಮತ್ತು ವಿವರಗಳನ್ನು ಪರಿಗಣಿಸೋಣ.",
     stepThreeTitle: "ಮರದಲ್ಲಿ ರೂಪಿತ",
     stepThreeText: "ನಿಖರವಾದ CNC ಕೆತ್ತನೆಯಿಂದ ವಿನ್ಯಾಸಕ್ಕೆ ಭೌತಿಕ ರೂಪ ಸಿಗುತ್ತದೆ.",
-    contactEyebrow: "ಸಂಪರ್ಕ",
-    contactTitle: "ಒಂದು ಕಲ್ಪನೆಯಿಂದ<br /><em>ಆರಂಭಿಸೋಣ.</em>",
-    contactText: "ಮನಸ್ಸಿನಲ್ಲಿ ಒಂದು ವಿನ್ಯಾಸವಿದೆಯೇ? ನಿಮ್ಮ ಕಲ್ಪನೆಯ ಬಗ್ಗೆ ಮಾತುಕತೆ ನಡೆಸಲು ನಮಗೆ ಸಂತೋಷ.",
-    contactPrompt: "ನೀವು ಪರಿಶೀಲಿಸಲು ಬಯಸುವ ಆಕಾರ, ಪದಗಳು ಅಥವಾ ವಿವರಗಳೊಂದಿಗೆ ಮಾತು ಆರಂಭಿಸಬಹುದು.",
-    startProject: "ಯೋಜನೆ ಆರಂಭಿಸಿ",
     footerTagline: "ಉದ್ದೇಶಪೂರ್ಣವಾಗಿ ರೂಪಿಸಿದ.<br /><span>ಮರದ ಸಹಜ ಸೊಬಗಿನಲ್ಲಿ.</span>",
     backToTop: "ಮೇಲಕ್ಕೆ ಹೋಗಿ"
   }
@@ -191,22 +156,6 @@ let currentLanguage = "en";
 function menuLabel(isOpen, language = currentLanguage) {
   if (language === "kn") return isOpen ? "ಮೆನು ಮುಚ್ಚಿರಿ" : "ಮೆನು ತೆರೆಯಿರಿ";
   return isOpen ? "Close menu" : "Open menu";
-}
-
-function configureSocialLinks(copy) {
-  const whatsappDigits = WHATSAPP_NUMBER.replace(/\D/g, "");
-  const instagramHandle = INSTAGRAM_HANDLE.trim().replace(/^@/, "");
-  const whatsappUrl = whatsappDigits ? `https://wa.me/${whatsappDigits}?text=${encodeURIComponent("Hello, I'm interested in custom woodwork from CRN Artifacts.")}` : "";
-  const instagramUrl = instagramHandle ? `https://www.instagram.com/${encodeURIComponent(instagramHandle)}/` : "";
-
-  socialLinks.forEach((button) => {
-    const isWhatsApp = button.dataset.socialLink === "whatsapp";
-    const url = isWhatsApp ? whatsappUrl : instagramUrl;
-    const unavailableMessage = isWhatsApp ? copy.whatsappUnavailable : copy.instagramUnavailable;
-    button.disabled = !url;
-    button.title = url ? button.getAttribute("aria-label") : unavailableMessage;
-    button.dataset.url = url;
-  });
 }
 
 function applyLanguage(language) {
@@ -245,7 +194,6 @@ function applyLanguage(language) {
   if (menuToggle) {
     menuToggle.setAttribute("aria-label", menuLabel(menuToggle.getAttribute("aria-expanded") === "true"));
   }
-  configureSocialLinks(copy);
 
   try {
     localStorage.setItem("crn-artifacts-language", currentLanguage);
@@ -279,11 +227,6 @@ languageToggle?.addEventListener("click", () => {
   document.body.classList.remove("menu-open");
 });
 
-socialLinks.forEach((button) => {
-  button.addEventListener("click", () => {
-    if (button.dataset.url) window.open(button.dataset.url, "_blank", "noopener,noreferrer");
-  });
-});
 
 document.querySelector("#year").textContent = new Date().getFullYear();
 

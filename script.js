@@ -2,6 +2,26 @@ const menuToggle = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector(".site-nav");
 const languageToggle = document.querySelector("#language-toggle");
 const socialLinks = document.querySelectorAll("[data-social-link]");
+const workCards = document.querySelectorAll(".work-card");
+
+if (workCards.length) {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    workCards.forEach((card) => card.classList.add("is-visible"));
+  } else {
+    document.documentElement.classList.add("motion-ready");
+    const workRevealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16, rootMargin: "0px 0px -35px 0px" });
+
+    workCards.forEach((card) => workRevealObserver.observe(card));
+  }
+}
 // Add the business WhatsApp number in international format and Instagram handle here.
 const WHATSAPP_NUMBER = "918073777020"; // India country code + the provided number.
 const INSTAGRAM_HANDLE = ""; // Example: crn_artifacts (without @)
@@ -34,7 +54,7 @@ const translations = {
     heroIntro: "Precise CNC carving brings your personal ideas into wood, with attention to form and detail.",
     exploreWork: "Explore what we make",
     heroNote: "Designed around your idea. Cut with precision.",
-    heroImageAlt: "Abstract concentric wood grain study in warm walnut tones",
+    heroImageAlt: "CNC router carving a geometric pattern into a wooden panel",
     tickerLabel: "Crafted with care, made to be yours",
     tickerOne: "GOOD IDEAS, MADE IN WOOD",
     tickerTwo: "PRECISION IN EVERY DETAIL",
@@ -55,10 +75,7 @@ const translations = {
     workFootnote: "These are starting points. Each piece can be shaped around your own design and dimensions.",
     aboutImageAlt: "CNC router carving a wood panel at the CRN Artifacts workshop",
     makerImageLabel: "THE MAKER BEHIND THE WORK",
-    aboutEyebrow: "ABOUT THE STUDIO",
-    aboutTitle: "Considered by<br /><em>nature.</em>",
     aboutRole: "Maker at CRN Artifacts · KR Nagar, Mysore district",
-    aboutBio: "CRN Artifacts is a custom CNC woodcraft studio focused on turning personal ideas into considered wood pieces. We’re drawn to the meeting point of precise carving and expressive form.",
     aboutApproach: "Each piece is planned around its size, design and finish. CNC routing gives the details clean definition, while the natural grain makes every piece distinct.",
     aboutWorkLabel: "HIS WORK",
     aboutWork: "Carved signs · Decorative wall panels · Personalized keepsakes",
@@ -116,7 +133,7 @@ const translations = {
     heroIntro: "ನಿಖರವಾದ CNC ಕೆತ್ತನೆಯಿಂದ ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ಕಲ್ಪನೆಗಳಿಗೆ ಮರದಲ್ಲಿ ರೂಪ ನೀಡುತ್ತೇವೆ; ಆಕಾರ ಮತ್ತು ವಿವರಗಳಿಗೆ ವಿಶೇಷ ಗಮನ ಕೊಡುತ್ತೇವೆ.",
     exploreWork: "ನಮ್ಮ ಕೆಲಸ ನೋಡಿ",
     heroNote: "ನಿಮ್ಮ ಕಲ್ಪನೆಗೆ ತಕ್ಕ ವಿನ್ಯಾಸ. ನಿಖರವಾದ ಕೆತ್ತನೆ.",
-    heroImageAlt: "ವಾಲ್ನಟ್ ಬಣ್ಣದ ಮರದ ನಾರುಗಳ ಅಮೂರ್ತ ವೃತ್ತಾಕಾರದ ವಿನ್ಯಾಸ",
+    heroImageAlt: "ಮರದ ಫಲಕದಲ್ಲಿ ಜ್ಯಾಮಿತೀಯ ವಿನ್ಯಾಸ ಕೆತ್ತುತ್ತಿರುವ CNC ಯಂತ್ರ",
     tickerLabel: "ಕಾಳಜಿಯಿಂದ ರೂಪಿಸಿದ, ನಿಮ್ಮದೇ ಆದ ಕಲಾಕೃತಿ",
     tickerOne: "ಒಳ್ಳೆಯ ಕಲ್ಪನೆ, ಮರದಲ್ಲಿ ರೂಪಿತ",
     tickerTwo: "ಪ್ರತಿ ವಿವರದಲ್ಲೂ ನಿಖರತೆ",
@@ -137,10 +154,7 @@ const translations = {
     workFootnote: "ಇವು ಆರಂಭಿಕ ಕಲ್ಪನೆಗಳು. ನಿಮ್ಮ ವಿನ್ಯಾಸ ಮತ್ತು ಅಳತೆಗೆ ತಕ್ಕಂತೆ ಪ್ರತಿಯೊಂದು ವಸ್ತುವನ್ನೂ ರೂಪಿಸಬಹುದು.",
     aboutImageAlt: "CRN Artifacts ಕಾರ್ಯಾಗಾರದಲ್ಲಿ ಮರದ ಫಲಕವನ್ನು ಕೆತ್ತುತ್ತಿರುವ CNC ಯಂತ್ರ",
     makerImageLabel: "ಈ ಕೆಲಸದ ಹಿಂದಿನ ಕಲಾವಿದ",
-    aboutEyebrow: "ಸ್ಟುಡಿಯೋ ಬಗ್ಗೆ",
-    aboutTitle: "ಸಹಜ ಸೊಬಗಿನ<br /><em>ವಿನ್ಯಾಸ.</em>",
     aboutRole: "CRN Artifacts‌ನ ಮರಕೆಲಸದ ಕಲಾವಿದ · ಕೆ.ಆರ್. ನಗರ, ಮೈಸೂರು ಜಿಲ್ಲೆ",
-    aboutBio: "CRN Artifacts ವೈಯಕ್ತಿಕ ಕಲ್ಪನೆಗಳನ್ನು ಅರ್ಥಪೂರ್ಣ ಮರದ ಕಲಾಕೃತಿಗಳಾಗಿ ರೂಪಿಸುವ ಕಸ್ಟಮ್ CNC ಮರಕೆತ್ತನೆ ಸ್ಟುಡಿಯೋ. ನಿಖರ ಕೆತ್ತನೆ ಮತ್ತು ಸೃಜನಾತ್ಮಕ ರೂಪಗಳ ಸಂಗಮವೇ ನಮ್ಮ ವಿಶೇಷತೆ.",
     aboutApproach: "ಪ್ರತಿಯೊಂದು ವಸ್ತುವಿನ ಅಳತೆ, ವಿನ್ಯಾಸ ಮತ್ತು ಮುಕ್ತಾಯವನ್ನು ಅದರ ಬಳಕೆಗೆ ತಕ್ಕಂತೆ ಯೋಜಿಸುತ್ತಾರೆ. CNC ಕೆತ್ತನೆ ವಿವರಗಳಿಗೆ ನಿಖರ ರೂಪ ನೀಡುತ್ತದೆ; ಮರದ ಸಹಜ ನಾರು ಪ್ರತಿಯೊಂದಕ್ಕೂ ವಿಭಿನ್ನತೆ ನೀಡುತ್ತದೆ.",
     aboutWorkLabel: "ಅವರ ಕೆಲಸ",
     aboutWork: "ಕೆತ್ತನೆಯ ಫಲಕಗಳು · ಅಲಂಕಾರಿಕ ಗೋಡೆ ಫಲಕಗಳು · ವೈಯಕ್ತಿಕ ಸ್ಮರಣಿಕೆಗಳು",
@@ -213,6 +227,10 @@ function applyLanguage(language) {
     const value = copy[element.dataset.i18nAriaLabel];
     if (value !== undefined) element.setAttribute("aria-label", value);
   });
+  document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+    const value = copy[element.dataset.i18nAlt];
+    if (value !== undefined) element.setAttribute("alt", value);
+  });
   document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
     const value = copy[element.dataset.i18nPlaceholder];
     if (value !== undefined) element.setAttribute("placeholder", value);
@@ -276,4 +294,3 @@ try {
   // Default to English if browser storage is unavailable.
 }
 applyLanguage(savedLanguage);
-

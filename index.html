@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#201913" />
+    <meta name="theme-color" content="#2c1838" />
     <meta name="description" content="CRN Artifacts creates custom CNC-crafted woodwork, from carved signs and wall panels to personal pieces made to your design." data-i18n-content="metaDescription" />
     <title id="page-title">CRN Artifacts — Wood, shaped with intention</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
@@ -42,9 +42,11 @@
             <a class="button button-gold" href="#contact"><span data-i18n="startProject">Start a project</span><span aria-hidden="true">↗</span></a>
           </div>
         </div>
-        <div class="hero-visual" role="img" aria-label="Abstract concentric wood grain study in warm walnut tones" data-i18n-aria-label="heroImageAlt">
-          <div class="hero-image"></div>
-          <div class="hero-image-shade"></div>
+        <div class="hero-visual">
+          <div class="hero-photo-frame">
+            <img class="hero-image" src="assets/cnc-wood-hero.png" alt="CNC router carving a geometric pattern into a wooden panel" data-i18n-alt="heroImageAlt" fetchpriority="high" />
+            <span class="hero-image-caption" aria-hidden="true">FORM / GRAIN / DETAIL</span>
+          </div>
         </div>
       </section>
 
@@ -62,19 +64,19 @@
             <div class="work-art art-sign" aria-hidden="true">
               <svg viewBox="0 0 620 440" role="presentation">
                 <defs>
-                  <linearGradient id="signWood" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8e5e37"/><stop offset=".5" stop-color="#6b4328"/><stop offset="1" stop-color="#9a6c42"/></linearGradient>
-                  <filter id="signShadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="18" stdDeviation="13" flood-color="#1c1009" flood-opacity=".28"/></filter>
-                  <pattern id="signGrain" width="180" height="55" patternUnits="userSpaceOnUse"><path d="M-10 15 C28 0 55 32 94 17 S150 8 192 22M-15 43 C28 30 61 55 112 39 S159 38 193 46" fill="none" stroke="#e5bd8d" stroke-opacity=".16" stroke-width="2"/></pattern>
+                  <linearGradient id="signWood" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c8753e"/><stop offset=".5" stop-color="#6d456b"/><stop offset="1" stop-color="#b75e36"/></linearGradient>
+                  <filter id="signShadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="18" stdDeviation="13" flood-color="#2c1838" flood-opacity=".28"/></filter>
+                  <pattern id="signGrain" width="180" height="55" patternUnits="userSpaceOnUse"><path d="M-10 15 C28 0 55 32 94 17 S150 8 192 22M-15 43 C28 30 61 55 112 39 S159 38 193 46" fill="none" stroke="#ffd09b" stroke-opacity=".22" stroke-width="2"/></pattern>
                 </defs>
-                <rect width="620" height="440" fill="#d9d0c2"/>
-                <path d="M0 350 200 245l170 105 250-160v250H0z" fill="#c9bbaa" opacity=".45"/>
+                <rect width="620" height="440" fill="#eee5ef"/>
+                <path d="M0 350 200 245l170 105 250-160v250H0z" fill="#d9c9df" opacity=".55"/>
                 <g filter="url(#signShadow)" transform="rotate(-4 310 220)">
                   <rect x="90" y="112" width="440" height="220" rx="4" fill="url(#signWood)"/>
                   <rect x="90" y="112" width="440" height="220" fill="url(#signGrain)"/>
-                  <rect x="108" y="130" width="404" height="184" fill="none" stroke="#d7b487" stroke-opacity=".64" stroke-width="2"/>
-                  <path d="M135 156h34m-17-17v34M451 156h34m-17-17v34M135 288h34m-17-17v34M451 288h34m-17-17v34" stroke="#d7b487" stroke-opacity=".8" stroke-width="2"/>
-                  <text x="310" y="223" text-anchor="middle" fill="#ead5b5" font-size="43" font-family="Georgia,serif" letter-spacing="5" data-i18n="artYourName">YOUR NAME</text>
-                  <text x="310" y="260" text-anchor="middle" fill="#e0c39e" font-size="12" font-family="Arial,sans-serif" letter-spacing="6" data-i18n="artSign">A PERSONAL SIGN</text>
+                  <rect x="108" y="130" width="404" height="184" fill="none" stroke="#f2a14a" stroke-opacity=".78" stroke-width="2"/>
+                  <path d="M135 156h34m-17-17v34M451 156h34m-17-17v34M135 288h34m-17-17v34M451 288h34m-17-17v34" stroke="#ffc27d" stroke-opacity=".9" stroke-width="2"/>
+                  <text x="310" y="223" text-anchor="middle" fill="#fff0dc" font-size="43" font-family="Georgia,serif" letter-spacing="5" data-i18n="artYourName">YOUR NAME</text>
+                  <text x="310" y="260" text-anchor="middle" fill="#ffd1a0" font-size="12" font-family="Arial,sans-serif" letter-spacing="6" data-i18n="artSign">A PERSONAL SIGN</text>
                 </g>
               </svg>
             </div>
@@ -86,22 +88,22 @@
             <div class="work-art art-panel" aria-hidden="true">
               <svg viewBox="0 0 520 440" role="presentation">
                 <defs>
-                  <linearGradient id="panelWood" x1="0" y1="0" x2=".9" y2="1"><stop stop-color="#a9784b"/><stop offset=".5" stop-color="#7b5132"/><stop offset="1" stop-color="#593923"/></linearGradient>
-                  <filter id="panelShadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="15" stdDeviation="11" flood-color="#1c1009" flood-opacity=".26"/></filter>
-                  <pattern id="panelGrain" width="120" height="40" patternUnits="userSpaceOnUse"><path d="M0 10c30-12 45 16 77 4s39-7 58 1M-5 31c25-10 48 14 75 3s39-4 54 2" fill="none" stroke="#e1b681" stroke-opacity=".15" stroke-width="1.5"/></pattern>
+                  <linearGradient id="panelWood" x1="0" y1="0" x2=".9" y2="1"><stop stop-color="#d18448"/><stop offset=".5" stop-color="#81516f"/><stop offset="1" stop-color="#50345d"/></linearGradient>
+                  <filter id="panelShadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="15" stdDeviation="11" flood-color="#2c1838" flood-opacity=".28"/></filter>
+                  <pattern id="panelGrain" width="120" height="40" patternUnits="userSpaceOnUse"><path d="M0 10c30-12 45 16 77 4s39-7 58 1M-5 31c25-10 48 14 75 3s39-4 54 2" fill="none" stroke="#ffd09b" stroke-opacity=".2" stroke-width="1.5"/></pattern>
                 </defs>
-                <rect width="520" height="440" fill="#d2c9bb"/>
-                <circle cx="385" cy="80" r="70" fill="#c1b19d" opacity=".35"/>
+                <rect width="520" height="440" fill="#ece3f0"/>
+                <circle cx="385" cy="80" r="70" fill="#d0bfdb" opacity=".45"/>
                 <g filter="url(#panelShadow)" transform="rotate(5 260 220)">
                   <rect x="115" y="56" width="290" height="328" rx="3" fill="url(#panelWood)"/>
                   <rect x="115" y="56" width="290" height="328" fill="url(#panelGrain)"/>
-                  <g fill="none" stroke="#d4a976" stroke-opacity=".86" stroke-width="5">
+                  <g fill="none" stroke="#f0a04b" stroke-opacity=".95" stroke-width="5">
                     <path d="M260 89 357 162 320 273 200 273 163 162z"/>
                     <path d="m260 121 66 50-25 75h-82l-25-75z"/>
                     <path d="m260 151 36 28-14 42h-44l-14-42z"/>
                   </g>
-                  <g fill="#e5c391"><circle cx="260" cy="89" r="5"/><circle cx="357" cy="162" r="5"/><circle cx="320" cy="273" r="5"/><circle cx="200" cy="273" r="5"/><circle cx="163" cy="162" r="5"/></g>
-                  <text x="260" y="328" text-anchor="middle" fill="#e6cfad" font-size="11" font-family="Arial,sans-serif" letter-spacing="4" data-i18n="artPanel">GEOMETRIC RELIEF</text>
+                  <g fill="#ffc27d"><circle cx="260" cy="89" r="5"/><circle cx="357" cy="162" r="5"/><circle cx="320" cy="273" r="5"/><circle cx="200" cy="273" r="5"/><circle cx="163" cy="162" r="5"/></g>
+                  <text x="260" y="328" text-anchor="middle" fill="#fff0dc" font-size="11" font-family="Arial,sans-serif" letter-spacing="4" data-i18n="artPanel">GEOMETRIC RELIEF</text>
                 </g>
               </svg>
             </div>
@@ -113,20 +115,20 @@
             <div class="work-art art-detail" aria-hidden="true">
               <svg viewBox="0 0 520 440" role="presentation">
                 <defs>
-                  <radialGradient id="detailWood" cx="40%" cy="30%"><stop stop-color="#bf8c5a"/><stop offset=".65" stop-color="#94633d"/><stop offset="1" stop-color="#684328"/></radialGradient>
-                  <filter id="detailShadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="16" stdDeviation="12" flood-color="#1c1009" flood-opacity=".25"/></filter>
-                  <pattern id="detailGrain" width="96" height="34" patternUnits="userSpaceOnUse"><path d="M-8 9c24-9 38 12 62 2s31-5 48 1M-4 27c23-7 41 11 61 2s30-4 47 1" fill="none" stroke="#efd0a2" stroke-opacity=".18" stroke-width="1.4"/></pattern>
+                  <radialGradient id="detailWood" cx="40%" cy="30%"><stop stop-color="#f0a04b"/><stop offset=".65" stop-color="#a96080"/><stop offset="1" stop-color="#503760"/></radialGradient>
+                  <filter id="detailShadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="16" stdDeviation="12" flood-color="#2c1838" flood-opacity=".28"/></filter>
+                  <pattern id="detailGrain" width="96" height="34" patternUnits="userSpaceOnUse"><path d="M-8 9c24-9 38 12 62 2s31-5 48 1M-4 27c23-7 41 11 61 2s30-4 47 1" fill="none" stroke="#ffe0b9" stroke-opacity=".22" stroke-width="1.4"/></pattern>
                 </defs>
-                <rect width="520" height="440" fill="#d8cdbd"/>
-                <path d="M0 0h170L0 170z" fill="#c5b6a3" opacity=".45"/>
+                <rect width="520" height="440" fill="#eee5ef"/>
+                <path d="M0 0h170L0 170z" fill="#d7c7df" opacity=".55"/>
                 <g filter="url(#detailShadow)">
                   <circle cx="263" cy="218" r="155" fill="url(#detailWood)"/>
                   <circle cx="263" cy="218" r="155" fill="url(#detailGrain)"/>
-                  <circle cx="263" cy="218" r="132" fill="none" stroke="#dfb987" stroke-opacity=".85" stroke-width="2"/>
-                  <circle cx="263" cy="218" r="122" fill="none" stroke="#dfb987" stroke-opacity=".42" stroke-width="1" stroke-dasharray="2 7"/>
-                  <path d="M263 113c18 26 44 50 75 57-31 7-57 31-75 57-18-26-44-50-75-57 31-7 57-31 75-57z" fill="none" stroke="#ead1ab" stroke-opacity=".9" stroke-width="2"/>
-                  <text x="263" y="238" text-anchor="middle" fill="#f0dabc" font-size="53" font-family="Georgia,serif">A + B</text>
-                  <text x="263" y="274" text-anchor="middle" fill="#e2c39e" font-size="10" font-family="Arial,sans-serif" letter-spacing="5" data-i18n="artKeepsake">MADE TO MEAN SOMETHING</text>
+                  <circle cx="263" cy="218" r="132" fill="none" stroke="#ffc27d" stroke-opacity=".9" stroke-width="2"/>
+                  <circle cx="263" cy="218" r="122" fill="none" stroke="#ffc27d" stroke-opacity=".5" stroke-width="1" stroke-dasharray="2 7"/>
+                  <path d="M263 113c18 26 44 50 75 57-31 7-57 31-75 57-18-26-44-50-75-57 31-7 57-31 75-57z" fill="none" stroke="#ffe1bc" stroke-opacity=".95" stroke-width="2"/>
+                  <text x="263" y="238" text-anchor="middle" fill="#fff0dc" font-size="53" font-family="Georgia,serif">A + B</text>
+                  <text x="263" y="274" text-anchor="middle" fill="#ffd1a0" font-size="10" font-family="Arial,sans-serif" letter-spacing="5" data-i18n="artKeepsake">MADE TO MEAN SOMETHING</text>
                 </g>
               </svg>
             </div>
@@ -152,17 +154,24 @@
           </div>
         </div>
         <div class="steps">
-          <article class="step"><span class="step-index">01 /</span><h3 data-i18n="stepOneTitle">Share your idea</h3><p data-i18n="stepOneText">Tell us what you have in mind and what makes it yours.</p></article>
-          <article class="step"><span class="step-index">02 /</span><h3 data-i18n="stepTwoTitle">Shape the design</h3><p data-i18n="stepTwoText">Consider the lines, proportions, and details of the piece.</p></article>
-          <article class="step"><span class="step-index">03 /</span><h3 data-i18n="stepThreeTitle">Crafted in wood</h3><p data-i18n="stepThreeText">The design takes physical form through precise CNC carving.</p></article>
-        </div>
-      </section>
-
-      <section class="about-section" id="about" aria-labelledby="about-title">
-        <p class="eyebrow"><span class="eyebrow-line"></span> <span data-i18n="aboutEyebrow">ABOUT THE STUDIO</span></p>
-        <div class="about-copy">
-          <h2 id="about-title" data-i18n-html="aboutTitle">Considered by<br /><em>nature.</em></h2>
-          <p data-i18n="aboutBio">CRN Artifacts is a custom CNC woodcraft studio focused on turning personal ideas into considered wood pieces. We’re drawn to the meeting point of precise carving and expressive form.</p>
+          <article class="step">
+            <div class="step-top"><span class="step-index">01 /</span>
+              <span class="step-art"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M17 16h30a5 5 0 0 1 5 5v18a5 5 0 0 1-5 5H31l-10 7v-7h-4a5 5 0 0 1-5-5V21a5 5 0 0 1 5-5Z"/><path class="step-art-accent" d="M24 28h16M24 35h10"/><path class="step-art-spark" d="M47 10v7m-3.5-3.5h7"/></svg></span>
+            </div>
+            <h3 data-i18n="stepOneTitle">Share your idea</h3><p data-i18n="stepOneText">Tell us what you have in mind and what makes it yours.</p>
+          </article>
+          <article class="step">
+            <div class="step-top"><span class="step-index">02 /</span>
+              <span class="step-art"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect x="13" y="14" width="38" height="36" rx="4"/><path class="step-art-accent" d="M20 40c7-19 16 4 25-17"/><circle cx="20" cy="40" r="3"/><circle class="step-art-dot" cx="45" cy="23" r="3"/><path d="M19 21h7m-7 5h4"/></svg></span>
+            </div>
+            <h3 data-i18n="stepTwoTitle">Shape the design</h3><p data-i18n="stepTwoText">Consider the lines, proportions, and details of the piece.</p>
+          </article>
+          <article class="step">
+            <div class="step-top"><span class="step-index">03 /</span>
+              <span class="step-art"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M14 25h36v23H14z"/><path class="step-art-accent" d="M20 34c4-5 8-5 12 0s8 5 12 0m-24 7c4-5 8-5 12 0s8 5 12 0"/><path d="M27 13h10v8H27zm5 8v7m-4-7v4m8-4v4"/><path class="step-art-spark" d="M49 14v6m-3-3h6"/></svg></span>
+            </div>
+            <h3 data-i18n="stepThreeTitle">Crafted in wood</h3><p data-i18n="stepThreeText">The design takes physical form through precise CNC carving.</p>
+          </article>
         </div>
       </section>
 
@@ -191,4 +200,3 @@
     </footer>
   </body>
 </html>
-

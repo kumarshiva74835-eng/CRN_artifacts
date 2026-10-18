@@ -124,7 +124,10 @@ h2 { font-size: clamp(48px, 5.6vw, 77px); line-height: .98; }
 .store-status { min-height: 20px; margin: 12px 0 0; color: var(--wood); font-size: 11px; }
 
 .cart-dialog { width: min(660px, calc(100% - 32px)); max-width: none; max-height: min(92svh, 900px); padding: 0; border: 0; background: var(--paper); color: var(--ink); box-shadow: 0 24px 90px rgba(17,12,8,.32); }
+.cart-dialog:not([open]) { display: none; }
+.cart-dialog[open] { display: block; position: fixed; top: 50%; left: 50%; z-index: 1000; margin: 0; transform: translate(-50%, -50%); }
 .cart-dialog::backdrop { background: rgba(23,17,12,.58); backdrop-filter: blur(3px); }
+body.cart-open::before { content: ""; position: fixed; inset: 0; z-index: 999; background: rgba(23,17,12,.58); backdrop-filter: blur(3px); }
 .cart-sheet { max-height: min(92svh, 900px); overflow-y: auto; padding: clamp(24px, 5vw, 45px); }
 .cart-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
 .cart-header .eyebrow { margin-bottom: 12px; }

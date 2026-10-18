@@ -352,7 +352,30 @@ function renderOrderCart(copy = translations[currentLanguage]) {
 }
 
 function closeOrderDialog() {
-  if (cartDialog?.open) cartDialog.close();
+  if (!cartDialog || (!cartDialog.open && !cartDialog.hasAttribute("open"))) return;
+  if (typeof cartDialog.close === "function" && cartDialog.open) {
+    cartDialog.close();
+  } else {
+    cartDialog.removeAttribute("open");
+  }
+  cartDialog.removeAttribute("aria-modal");
+  document.body.classList.remove("cart-open");
+}
+
+function openOrderDialog() {
+  if (!cartDialog || cartDialog.open || cartDialog.hasAttribute("open")) return;
+  if (typeof cartDialog.showModal === "function") {
+    try {
+      cartDialog.showModal();
+      return;
+    } catch {
+      // Fall back to a visible dialog when native modal opening is unavailable.
+    }
+  }
+  cartDialog.setAttribute("open", "");
+  cartDialog.setAttribute("aria-modal", "true");
+  document.body.classList.add("cart-open");
+  cartClose?.focus();
 }
 
 function buildOrderMessage(formData, copy = translations[currentLanguage]) {
@@ -474,12 +497,12 @@ document.querySelectorAll(".add-to-order").forEach((button) => {
     orderCart.set(productId, Math.min(99, (orderCart.get(productId) || 0) + 1));
     renderOrderCart();
     if (cartStatus) cartStatus.textContent = `${getProductName(productId)} ${translations[currentLanguage].itemAdded}`;
-    if (cartDialog && !cartDialog.open) cartDialog.showModal();
+    openOrderDialog();
   });
 });
 
 cartOpen?.addEventListener("click", () => {
-  if (cartDialog && !cartDialog.open) cartDialog.showModal();
+  openOrderDialog();
   menuToggle?.setAttribute("aria-expanded", "false");
   menuToggle?.setAttribute("aria-label", menuLabel(false));
   siteNav?.classList.remove("is-open");
@@ -494,6 +517,18 @@ document.querySelector(".cart-continue")?.addEventListener("click", () => {
 
 cartDialog?.addEventListener("click", (event) => {
   if (event.target === cartDialog) closeOrderDialog();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && document.body.classList.contains("cart-open")) {
+    closeOrderDialog();
+  }
+});
+
+document.body.addEventListener("click", (event) => {
+  if (event.target === document.body && document.body.classList.contains("cart-open")) {
+    closeOrderDialog();
+  }
 });
 
 cartItems?.addEventListener("click", (event) => {

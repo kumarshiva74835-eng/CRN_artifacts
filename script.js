@@ -2,15 +2,6 @@ const menuToggle = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector(".site-nav");
 const languageToggle = document.querySelector("#language-toggle");
 const socialLinks = document.querySelectorAll("[data-social-link]");
-const cartDialog = document.querySelector("#cart-dialog");
-const cartOpen = document.querySelector("#cart-open");
-const cartClose = document.querySelector("#cart-close");
-const cartCount = document.querySelector("#cart-count");
-const cartItems = document.querySelector("#cart-items");
-const cartEmpty = document.querySelector("#cart-empty");
-const orderForm = document.querySelector("#order-form");
-const cartStatus = document.querySelector("#cart-status");
-
 // Add the business WhatsApp number in international format and Instagram handle here.
 const WHATSAPP_NUMBER = "918073777020"; // India country code + the provided number.
 const INSTAGRAM_HANDLE = ""; // Example: crn_artifacts (without @)
@@ -18,7 +9,7 @@ const INSTAGRAM_HANDLE = ""; // Example: crn_artifacts (without @)
 const translations = {
   en: {
     pageTitle: "CRN Artifacts — Wood, shaped with intention",
-    metaDescription: "Explore made-to-order CNC woodwork from CRN Artifacts. Request carved signs, decorative wall panels and personalized keepsakes.",
+    metaDescription: "Explore custom CNC-crafted woodwork, carved signs, decorative panels, and personalized keepsakes from CRN Artifacts.",
     skipContent: "Skip to content",
     brandHome: "CRN Artifacts home",
     brandBackTop: "CRN Artifacts, back to top",
@@ -90,7 +81,7 @@ const translations = {
     aboutApproach: "Each piece is planned around its size, design and finish. CNC routing gives the details clean definition, while the natural grain makes every piece distinct.",
     aboutWorkLabel: "HIS WORK",
     aboutWork: "Carved signs · Decorative wall panels · Personalized keepsakes",
-    aboutCta: "Explore made-to-order pieces",
+    aboutCta: "Explore what we make",
     cartEyebrow: "YOUR SELECTION",
     cartTitle: "Your order",
     closeCart: "Close order",
@@ -138,7 +129,7 @@ const translations = {
   },
   kn: {
     pageTitle: "CRN Artifacts — ಮರಕ್ಕೆ ರೂಪ, ಅರ್ಥಪೂರ್ಣ ಸ್ಪರ್ಶ",
-    metaDescription: "CRN Artifacts‌ನಲ್ಲಿ ಆರ್ಡರ್ ಮೇರೆಗೆ ತಯಾರಾಗುವ CNC ಮರದ ಕೆಲಸ ನೋಡಿ. ಕೆತ್ತನೆಯ ಫಲಕ, ಗೋಡೆ ಅಲಂಕಾರ ಮತ್ತು ವೈಯಕ್ತಿಕ ಸ್ಮರಣಿಕೆಗಳಿಗೆ ವಿನಂತಿಸಿ.",
+    metaDescription: "CRN Artifacts‌ನ ಕಸ್ಟಮ್ CNC ಮರದ ಕೆತ್ತನೆ, ಅಲಂಕಾರಿಕ ಫಲಕಗಳು ಮತ್ತು ವೈಯಕ್ತಿಕ ಸ್ಮರಣಿಕೆಗಳನ್ನು ನೋಡಿ.",
     skipContent: "ಮುಖ್ಯ ವಿಷಯಕ್ಕೆ ಹೋಗಿ",
     brandHome: "CRN Artifacts ಮುಖಪುಟ",
     brandBackTop: "CRN Artifacts, ಪುಟದ ಮೇಲಕ್ಕೆ",
@@ -210,7 +201,7 @@ const translations = {
     aboutApproach: "ಪ್ರತಿಯೊಂದು ವಸ್ತುವಿನ ಅಳತೆ, ವಿನ್ಯಾಸ ಮತ್ತು ಮುಕ್ತಾಯವನ್ನು ಅದರ ಬಳಕೆಗೆ ತಕ್ಕಂತೆ ಯೋಜಿಸುತ್ತಾರೆ. CNC ಕೆತ್ತನೆ ವಿವರಗಳಿಗೆ ನಿಖರ ರೂಪ ನೀಡುತ್ತದೆ; ಮರದ ಸಹಜ ನಾರು ಪ್ರತಿಯೊಂದಕ್ಕೂ ವಿಭಿನ್ನತೆ ನೀಡುತ್ತದೆ.",
     aboutWorkLabel: "ಅವರ ಕೆಲಸ",
     aboutWork: "ಕೆತ್ತನೆಯ ಫಲಕಗಳು · ಅಲಂಕಾರಿಕ ಗೋಡೆ ಫಲಕಗಳು · ವೈಯಕ್ತಿಕ ಸ್ಮರಣಿಕೆಗಳು",
-    aboutCta: "ಆರ್ಡರ್ ಮೇರೆಗೆ ತಯಾರಾಗುವ ವಸ್ತುಗಳನ್ನು ನೋಡಿ",
+    aboutCta: "ನಾವು ಮಾಡುವ ಕೆಲಸ ನೋಡಿ",
     cartEyebrow: "ನಿಮ್ಮ ಆಯ್ಕೆ",
     cartTitle: "ನಿಮ್ಮ ಆರ್ಡರ್",
     closeCart: "ಆರ್ಡರ್ ಮುಚ್ಚಿ",
@@ -259,142 +250,6 @@ const translations = {
 };
 
 let currentLanguage = "en";
-const orderCart = new Map();
-const orderCatalog = {
-  "name-sign": { nameKey: "productSignTitle" },
-  "wall-panel": { nameKey: "productPanelTitle" },
-  keepsake: { nameKey: "productKeepsakeTitle" }
-};
-const ORDER_CART_KEY = "crn-artifacts-order-cart-v1";
-
-function loadOrderCart() {
-  try {
-    const saved = JSON.parse(localStorage.getItem(ORDER_CART_KEY) || "{}");
-    Object.entries(saved).forEach(([productId, quantity]) => {
-      if (orderCatalog[productId] && Number.isInteger(quantity) && quantity > 0 && quantity <= 99) {
-        orderCart.set(productId, quantity);
-      }
-    });
-  } catch {
-    // The order can still be built for this visit if storage is unavailable.
-  }
-}
-
-function saveOrderCart() {
-  try {
-    localStorage.setItem(ORDER_CART_KEY, JSON.stringify(Object.fromEntries(orderCart)));
-  } catch {
-    // The order can still be sent for this visit if storage is unavailable.
-  }
-}
-
-function getProductName(productId, copy = translations[currentLanguage]) {
-  return copy[orderCatalog[productId]?.nameKey] || productId;
-}
-
-function renderOrderCart(copy = translations[currentLanguage]) {
-  if (!cartItems || !cartCount || !cartEmpty || !orderForm) return;
-  const quantityTotal = [...orderCart.values()].reduce((sum, quantity) => sum + quantity, 0);
-  cartCount.textContent = String(quantityTotal);
-  cartOpen?.setAttribute("aria-label", `${copy.cartButtonLabel}, ${quantityTotal} ${quantityTotal === 1 ? copy.itemSelected : copy.itemsSelected}`);
-  cartEmpty.hidden = quantityTotal > 0;
-  cartItems.hidden = quantityTotal === 0;
-  orderForm.hidden = quantityTotal === 0;
-  document.querySelector(".cart-note")?.toggleAttribute("hidden", quantityTotal === 0);
-  cartItems.replaceChildren();
-
-  orderCart.forEach((quantity, productId) => {
-    const productName = getProductName(productId, copy);
-    const item = document.createElement("li");
-    item.className = "cart-item";
-
-    const description = document.createElement("div");
-    description.className = "cart-item-description";
-    const title = document.createElement("h3");
-    title.textContent = productName;
-    const price = document.createElement("p");
-    price.textContent = copy.priceOnRequest;
-    description.append(title, price);
-
-    const controls = document.createElement("div");
-    controls.className = "cart-item-controls";
-    const decrement = document.createElement("button");
-    decrement.type = "button";
-    decrement.className = "quantity-button";
-    decrement.textContent = "−";
-    decrement.setAttribute("aria-label", `${copy.decreaseQuantity} ${productName}`);
-    decrement.dataset.cartAction = "decrease";
-    decrement.dataset.productId = productId;
-    const amount = document.createElement("span");
-    amount.className = "quantity-value";
-    amount.textContent = String(quantity);
-    amount.setAttribute("aria-label", `${quantity} ${quantity === 1 ? copy.itemSelected : copy.itemsSelected}`);
-    const increment = document.createElement("button");
-    increment.type = "button";
-    increment.className = "quantity-button";
-    increment.textContent = "+";
-    increment.setAttribute("aria-label", `${copy.increaseQuantity} ${productName}`);
-    increment.dataset.cartAction = "increase";
-    increment.dataset.productId = productId;
-    increment.disabled = quantity >= 99;
-    const remove = document.createElement("button");
-    remove.type = "button";
-    remove.className = "remove-item";
-    remove.textContent = copy.removeItem;
-    remove.setAttribute("aria-label", `${copy.removeItem} ${productName}`);
-    remove.dataset.cartAction = "remove";
-    remove.dataset.productId = productId;
-    controls.append(decrement, amount, increment, remove);
-    item.append(description, controls);
-    cartItems.append(item);
-  });
-  saveOrderCart();
-}
-
-function closeOrderDialog() {
-  if (!cartDialog || (!cartDialog.open && !cartDialog.hasAttribute("open"))) return;
-  if (typeof cartDialog.close === "function" && cartDialog.open) {
-    cartDialog.close();
-  } else {
-    cartDialog.removeAttribute("open");
-  }
-  cartDialog.removeAttribute("aria-modal");
-  document.body.classList.remove("cart-open");
-}
-
-function openOrderDialog() {
-  if (!cartDialog || cartDialog.open || cartDialog.hasAttribute("open")) return;
-  if (typeof cartDialog.showModal === "function") {
-    try {
-      cartDialog.showModal();
-      return;
-    } catch {
-      // Fall back to a visible dialog when native modal opening is unavailable.
-    }
-  }
-  cartDialog.setAttribute("open", "");
-  cartDialog.setAttribute("aria-modal", "true");
-  document.body.classList.add("cart-open");
-  cartClose?.focus();
-}
-
-function buildOrderMessage(formData, copy = translations[currentLanguage]) {
-  const lines = [copy.orderMessageGreeting, "", copy.orderMessageItems];
-  orderCart.forEach((quantity, productId) => {
-    lines.push(`• ${getProductName(productId, copy)} — ${copy.orderMessageQuantity}: ${quantity}`);
-  });
-  lines.push(
-    "",
-    `${copy.orderMessageName}: ${formData.get("customerName").trim()}`,
-    `${copy.orderMessagePhone}: ${formData.get("customerPhone").trim()}`,
-    `${copy.orderMessageDelivery}: ${formData.get("deliveryLocation").trim()}`
-  );
-  const notes = formData.get("orderNotes").trim();
-  if (notes) lines.push(`${copy.orderMessageNotes}: ${notes}`);
-  lines.push("", copy.orderMessageConfirm);
-  return lines.join("\n");
-}
-
 function menuLabel(isOpen, language = currentLanguage) {
   if (language === "kn") return isOpen ? "ಮೆನು ಮುಚ್ಚಿರಿ" : "ಮೆನು ತೆರೆಯಿರಿ";
   return isOpen ? "Close menu" : "Open menu";
@@ -449,8 +304,6 @@ function applyLanguage(language) {
     menuToggle.setAttribute("aria-label", menuLabel(menuToggle.getAttribute("aria-expanded") === "true"));
   }
   configureSocialLinks(copy);
-  renderOrderCart(copy);
-  if (cartStatus) cartStatus.textContent = "";
 
   try {
     localStorage.setItem("crn-artifacts-language", currentLanguage);
@@ -490,75 +343,6 @@ socialLinks.forEach((button) => {
   });
 });
 
-document.querySelectorAll(".add-to-order").forEach((button) => {
-  button.addEventListener("click", () => {
-    const productId = button.dataset.productId;
-    if (!orderCatalog[productId]) return;
-    orderCart.set(productId, Math.min(99, (orderCart.get(productId) || 0) + 1));
-    renderOrderCart();
-    if (cartStatus) cartStatus.textContent = `${getProductName(productId)} ${translations[currentLanguage].itemAdded}`;
-    openOrderDialog();
-  });
-});
-
-cartOpen?.addEventListener("click", () => {
-  openOrderDialog();
-  menuToggle?.setAttribute("aria-expanded", "false");
-  menuToggle?.setAttribute("aria-label", menuLabel(false));
-  siteNav?.classList.remove("is-open");
-  document.body.classList.remove("menu-open");
-});
-
-cartClose?.addEventListener("click", closeOrderDialog);
-document.querySelector(".cart-continue")?.addEventListener("click", () => {
-  closeOrderDialog();
-  document.querySelector("#store")?.scrollIntoView({ behavior: "smooth" });
-});
-
-cartDialog?.addEventListener("click", (event) => {
-  if (event.target === cartDialog) closeOrderDialog();
-});
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && document.body.classList.contains("cart-open")) {
-    closeOrderDialog();
-  }
-});
-
-document.body.addEventListener("click", (event) => {
-  if (event.target === document.body && document.body.classList.contains("cart-open")) {
-    closeOrderDialog();
-  }
-});
-
-cartItems?.addEventListener("click", (event) => {
-  const button = event.target.closest("button[data-cart-action]");
-  if (!button) return;
-  const { cartAction, productId } = button.dataset;
-  const quantity = orderCart.get(productId) || 0;
-  if (cartAction === "remove" || (cartAction === "decrease" && quantity <= 1)) {
-    orderCart.delete(productId);
-  } else if (cartAction === "decrease") {
-    orderCart.set(productId, quantity - 1);
-  } else if (cartAction === "increase") {
-    orderCart.set(productId, Math.min(99, quantity + 1));
-  }
-  renderOrderCart();
-});
-
-orderForm?.addEventListener("submit", (event) => {
-  event.preventDefault();
-  if (!orderCart.size) return;
-  const whatsappDigits = WHATSAPP_NUMBER.replace(/\D/g, "");
-  if (!whatsappDigits) {
-    if (cartStatus) cartStatus.textContent = translations[currentLanguage].whatsappUnavailable;
-    return;
-  }
-  const message = buildOrderMessage(new FormData(orderForm));
-  const orderUrl = `https://wa.me/${whatsappDigits}?text=${encodeURIComponent(message)}`;
-  window.open(orderUrl, "_blank", "noopener,noreferrer");
-});
-
 document.querySelector("#year").textContent = new Date().getFullYear();
 
 let savedLanguage = "en";
@@ -567,5 +351,5 @@ try {
 } catch {
   // Default to English if browser storage is unavailable.
 }
-loadOrderCart();
 applyLanguage(savedLanguage);
+
